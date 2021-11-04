@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from decouple import config
 from dj_database_url import parse as dburl
 from pathlib import Path
+import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -79,9 +80,10 @@ WSGI_APPLICATION = 'diet.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 DATABASES = {
     'default':
-        config('DATABASE_URL', cast=dburl),
+        config('DATABASE_URL', default=default_dburl, cast=dburl),
 }
 
 
