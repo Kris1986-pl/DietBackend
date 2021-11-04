@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['192.168.5.9', 'diet-backend-poland.herokuapp.com']
 CORS_ORIGIN_ALLOW_ALL = True
 
 
