@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'diet.wsgi.application'
 default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 DATABASES = {
     'default':
-        config('DATABASE_URL', default=default_dburl, cast=dburl),
+        config('HEROKU_POSTGRESQL_IVORY_URL', default=default_dburl, cast=dburl),
 }
 
 
